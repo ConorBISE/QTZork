@@ -4,6 +4,7 @@
 #include <QKeyEvent>
 #include <QMainWindow>
 
+class QGraphicsPixmapItem;
 class QRadioButton;
 class LockedCheckBoxGrid;
 
@@ -21,7 +22,7 @@ private:
     LockedCheckBoxGrid *grid;
     QRadioButton *radio;
     QGraphicsProxyWidget *radioProxy;
-    QGraphicsProxyWidget *w;
+    QGraphicsPixmapItem *w;
 
     float pos;
     float vel;

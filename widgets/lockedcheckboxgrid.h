@@ -1,11 +1,12 @@
 #ifndef LOCKEDCHECKBOXGRID_H
 #define LOCKEDCHECKBOXGRID_H
 
-#include <QWidget>
+#include "freezablegraphicswidget.h"
+
 
 class LockedCheckBox;
 
-class LockedCheckBoxGrid : public QWidget
+class LockedCheckBoxGrid : public FreezableGraphicsWidget
 {
     Q_OBJECT
 public:

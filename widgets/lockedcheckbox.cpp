@@ -1,5 +1,9 @@
 #include "lockedcheckbox.h"
 
+#include <QStyleOptionButton>
+#include <QStylePainter>
+#include <qdrawutil.h>
+
 LockedCheckBox::LockedCheckBox(QWidget *parent)
     : QCheckBox(parent) {}
 
@@ -11,3 +15,7 @@ void LockedCheckBox::mousePressEvent(QMouseEvent *event) {
 void LockedCheckBox::keyPressEvent(QKeyEvent *event) {
     event->ignore();
 };
+
+bool LockedCheckBox::event(QEvent *evt) {
+    return QCheckBox::event(evt);
+}

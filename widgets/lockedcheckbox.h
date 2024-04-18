@@ -18,8 +18,8 @@ public:
     LockedCheckBox(QWidget *parent = nullptr);
 
 protected:
-    void mousePressEvent(QMouseEvent *event);
-    void keyPressEvent(QKeyEvent *event);
+    void mousePressEvent(QMouseEvent *event) override;
+    void keyPressEvent(QKeyEvent *event) override;
+    bool event(QEvent *evt) override;
 };
-
 #endif // LOCKEDCHECKBOX_H

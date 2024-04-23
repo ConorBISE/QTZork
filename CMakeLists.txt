@@ -17,15 +17,30 @@ set(PROJECT_SOURCES
         main.cpp
         qtzork.cpp
         qtzork.h
+
         widgets/lockedcheckbox.h
         widgets/lockedcheckbox.cpp
         widgets/lockedcheckboxgrid.h
         widgets/lockedcheckboxgrid.cpp
         widgets/freezablegraphicswidget.h
         widgets/freezablegraphicswidget.cpp
-        io/level.h
-        io/level.cpp
-)
+
+        game/level.h
+        game/level.cpp
+        game/camera.h
+        game/camera.cpp
+        game/world.h
+        game/world.cpp
+
+        game/entity/base/entity.h
+        game/entity/base/entity.cpp
+        game/entity/base/physicsobject.h
+        game/entity/base/physicsobject.cpp
+        game/entity/base/sprite.h
+        game/entity/base/sprite.cpp
+
+        util.h
+    )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
     qt_add_executable(QTZork

@@ -4,6 +4,8 @@
 
 #include <QRadioButton>
 
+namespace widgets {
+
 LockedCheckBoxGrid::LockedCheckBoxGrid(int width, int height, int checkboxWidth, int checkboxHeight, QWidget *parent)
     : FreezableGraphicsWidget{parent}
     , width{width}
@@ -42,3 +44,5 @@ void LockedCheckBoxGrid::setBoxChecked(int x, int y, bool state) {
      if (x >= 0 && x < width && y >= 0 && y < height)
          boxes[x * width + y]->setCheckState(state ? Qt::CheckState::Checked : Qt::CheckState::Unchecked);
 };
+
+}

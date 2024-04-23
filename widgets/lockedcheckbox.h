@@ -4,6 +4,8 @@
 #include <QCheckBox>
 #include <QKeyEvent>
 
+namespace widgets {
+
 /*
  * LockedCheckBox
  * A widget that looks identical to an enabled QCheckBox, but ignores all clicks upon it.
@@ -23,3 +25,5 @@ protected:
     bool event(QEvent *evt) override;
 };
 #endif // LOCKEDCHECKBOX_H
+
+}

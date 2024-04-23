@@ -4,6 +4,8 @@
 #include <QStylePainter>
 #include <qdrawutil.h>
 
+namespace widgets {
+
 LockedCheckBox::LockedCheckBox(QWidget *parent)
     : QCheckBox(parent) {}
 
@@ -18,4 +20,6 @@ void LockedCheckBox::keyPressEvent(QKeyEvent *event) {
 
 bool LockedCheckBox::event(QEvent *evt) {
     return QCheckBox::event(evt);
+}
+
 }

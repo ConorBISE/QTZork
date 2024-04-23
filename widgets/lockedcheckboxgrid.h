@@ -4,6 +4,9 @@
 #include "freezablegraphicswidget.h"
 
 
+
+namespace widgets {
+
 class LockedCheckBox;
 
 class LockedCheckBoxGrid : public FreezableGraphicsWidget
@@ -23,5 +26,7 @@ private:
 
     LockedCheckBox **boxes;
 };
+
+}
 
 #endif // LOCKEDCHECKBOXGRID_H

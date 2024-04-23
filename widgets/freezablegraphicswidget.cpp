@@ -6,6 +6,8 @@
 #include <QGraphicsView>
 #include <QPainter>
 
+namespace widgets {
+
 FreezableGraphicsWidget::FreezableGraphicsWidget(QWidget *parent)
     : QWidget{parent}
 {
@@ -25,4 +27,6 @@ void FreezableGraphicsWidget::freeze(QImage& image) {
     QPainter painter(&image);
     painter.setRenderHints(QPainter::Antialiasing | QPainter::SmoothPixmapTransform);
     scene.render(&painter);
+}
+
 }

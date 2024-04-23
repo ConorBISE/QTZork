@@ -4,9 +4,7 @@
 #include <QKeyEvent>
 #include <QMainWindow>
 
-class QGraphicsPixmapItem;
-class QRadioButton;
-class LockedCheckBoxGrid;
+namespace game { class World; }
 
 class QTZork : public QMainWindow
 {
@@ -19,12 +17,6 @@ public:
     void update();
 
 private:
-    LockedCheckBoxGrid *grid;
-    QRadioButton *radio;
-    QGraphicsProxyWidget *radioProxy;
-    QGraphicsPixmapItem *w;
-
-    float pos;
-    float vel;
+    game::World *world;
 };
 #endif // QTZORK_H

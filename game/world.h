@@ -4,24 +4,27 @@
 #include <QWidget>
 
 class QGraphicsView;
-
-namespace entity::base {
-class Entity;
-}
+class QGraphicsScene;
 
 namespace game {
+
+class Camera;
+
+namespace entity::base { class Entity; }
 
 class World : public QWidget
 {
     Q_OBJECT
 public:
-    explicit World(QWidget *parent = nullptr);
+    explicit World(Camera *camera, QWidget *parent = nullptr);
     ~World();
 
-    void addEntity(entity::base::Entity entity);
+    void addEntity(entity::base::Entity *entity);
 
 private:
-    std::vector<entity::base::Entity> entities;
+    Camera *camera;
+    std::vector<entity::base::Entity *> entities;
+    QGraphicsScene *graphicsScene;
     QGraphicsView *graphicsView;
 };
 

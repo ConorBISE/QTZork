@@ -1,11 +1,17 @@
 #include "qtzork.h"
+#include "util/logging.h"
 
 #include <QApplication>
 
 int main(int argc, char *argv[])
 {
+    LOGGER = new Logger();
+
     QApplication a(argc, argv);
-    QTZork w;
+    game::QTZork w;
     w.show();
-    return a.exec();
+    int ret = a.exec();
+
+    delete LOGGER;
+    return ret;
 }

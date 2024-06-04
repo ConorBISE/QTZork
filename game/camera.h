@@ -1,17 +1,23 @@
 #ifndef CAMERA_H
 #define CAMERA_H
 
+#include <QGraphicsItem>
 #include <QVector2D>
+
 
 namespace game {
 
-struct Camera
+namespace entity::base { class Entity; }
+
+class Camera
 {
 public:
-    QVector2D center;
-    float zoom = 1;
+    Camera();
+    void setTransform(int cx, int cy);
+    void addVisualEntity(entity::base::Entity *e);
 
-    QVector2D transform(const QVector2D p) const;
+private:
+    std::vector<entity::base::Entity*> visualEntities;
 };
 
 }

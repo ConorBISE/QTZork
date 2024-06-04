@@ -1,12 +1,22 @@
 #ifndef SPRITE_H
 #define SPRITE_H
 
-namespace entity::base {
+
+class QGraphicsItem;
+class QGraphicsScene;
+
+namespace game::entity::base {
 
 class Sprite
 {
 public:
     Sprite();
+
+    virtual void setupSprite(QGraphicsScene *scene) = 0;
+    QGraphicsItem *getGraphicsItem();
+
+protected:
+    QGraphicsItem *graphicsItem = (QGraphicsItem*)0xdeadbeef;
 };
 
 }

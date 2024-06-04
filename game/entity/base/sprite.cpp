@@ -1,5 +1,12 @@
 #include "sprite.h"
+#include "../../../util/logging.h"
 
-namespace entity::base {
-    Sprite::Sprite() {}
+namespace game::entity::base {
+    Sprite::Sprite() {
+        LOGGER->logObj("Creating Sprite");
+    }
+
+    QGraphicsItem *Sprite::getGraphicsItem() {
+        return graphicsItem;
+    };
 }

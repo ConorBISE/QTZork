@@ -1,10 +1,15 @@
 #ifndef QTZORK_H
 #define QTZORK_H
 
+#include "game/camera.h"
 #include <QKeyEvent>
 #include <QMainWindow>
 
-namespace game { class World; }
+namespace game {
+
+namespace entity { class Player; }
+
+class World;
 
 class QTZork : public QMainWindow
 {
@@ -17,6 +22,14 @@ public:
     void update();
 
 private:
+    void keyPressEvent(QKeyEvent *event) override;
+    void keyReleaseEvent(QKeyEvent *event) override;
+
+    game::Camera *camera;
     game::World *world;
+    entity::Player *player;
 };
+
+}
+
 #endif // QTZORK_H

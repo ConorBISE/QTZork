@@ -31,8 +31,6 @@ LockedCheckBoxGrid::LockedCheckBoxGrid(int width, int height, int checkboxWidth,
 }
 
 LockedCheckBoxGrid::~LockedCheckBoxGrid() {
-    qInfo() << "LockedCheckBoxGrid destroyed!";
-
     for (int i = 0; i < width * height; i++) {
         delete boxes[i];
     }
@@ -43,6 +41,32 @@ LockedCheckBoxGrid::~LockedCheckBoxGrid() {
 void LockedCheckBoxGrid::setBoxChecked(int x, int y, bool state) {
      if (x >= 0 && x < width && y >= 0 && y < height)
          boxes[x * width + y]->setCheckState(state ? Qt::CheckState::Checked : Qt::CheckState::Unchecked);
+}
+
+void LockedCheckBoxGrid::setRectChecked(int x, int y, unsigned int width, unsigned int height, bool state) {
+    for (int i = x; i < x + width; i++)
+        for (int j = y; j < y + height; j++)
+            setBoxChecked(i, j, state);
+}
+
+int LockedCheckBoxGrid::getWidth() const
+{
+    return width;
+}
+
+int LockedCheckBoxGrid::getHeight() const
+{
+    return height;
+};
+
+int LockedCheckBoxGrid::getImageWidth() const
+{
+    return width * checkboxWidth;
+}
+
+int LockedCheckBoxGrid::getImageHeight() const
+{
+    return height * checkboxHeight;
 };
 
 }

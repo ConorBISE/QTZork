@@ -17,6 +17,13 @@ public:
     ~LockedCheckBoxGrid();
 
     void setBoxChecked(int x, int y, bool state);
+    void setRectChecked(int x, int y, unsigned int width, unsigned int height, bool state);
+
+    int getWidth() const;
+    int getHeight() const;
+
+    int getImageWidth() const;
+    int getImageHeight() const;
 
 private:
     int width;
